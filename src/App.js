@@ -1,25 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+
+// npm
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
+// component main
+import MainPage from "./components/Main/MainPage";
+import BlogPage from "./components/Main/BlogPage";
+import BlogPageTwos from "./components/Main/BlogPageTwos";
+
+// component layout
+import SocialMedia from "./components/Layout/SocialMedia";
+import Footer from "./components/Layout/Footer";
+
+// component page
+import SignIn from "./components/Pages/SignIn/SignIn";
+import SignUp from "./components/Pages/SignUp/SignUp";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Route path="/" component={SocialMedia} />
+      <Route path="/" exact component={MainPage} />
+      <Route path="/blog" exact component={BlogPage} />
+      <Route path="/blog/page/2/" exact component={BlogPageTwos} />
+      <Route path="/signin" exact component={SignIn} />
+      <Route path="/signin" exact component={Footer} />
+      <Route path="/signup" exact component={SignUp} />
+      <Route path="/signup" exact component={Footer} />
+    </Router>
   );
 }
 
