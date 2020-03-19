@@ -1,4 +1,4 @@
-How to configure
+##How to configure
 1. git clone
 2. cd your path folder
 3. npm install
